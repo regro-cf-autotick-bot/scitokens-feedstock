@@ -9,6 +9,8 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/scitokens-feeds
 
 Summary: SciToken reference implementation library
 
+Development: https://github.com/scitokens/scitokens.git
+
 This library aims to be a reference implementation of the
 SciTokens\' JSON Web Token (JWT) token format.
 
