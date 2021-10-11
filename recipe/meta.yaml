@@ -20,26 +20,32 @@ build:
 requirements:
   host:
     - pip
-    - python >=2.7
+    - python >=3.6
     - setuptools
   run:
     - cryptography
-    - pyjwt
-    - python >=2.7
+    - pyjwt >=2.0.0
+    - python >=3.6
     - six
 
 test:
   requires:
     - pip
+    - pytest
+  source_files:
+    - tests/
   commands:
-    # requirements
+    # check requirements
     - python -m pip check
-    # entry points
+    # run test suite
+    - python -m pytest -ra -v tests/
+    # sanity check entry points
     - scitokens-admin-create-key --help
     - scitokens-admin-create-token --help
 
 about:
   home: https://scitokens.org
+  dev_url: https://github.com/scitokens/scitokens.git
   summary: SciToken reference implementation library
   license: Apache-2.0
   license_file: LICENSE
