@@ -24,7 +24,7 @@ requirements:
     - setuptools
   run:
     - cryptography
-    - pyjwt >=2.0.0
+    - pyjwt >=1.6.1
     - python >=3.6
     - six
 
