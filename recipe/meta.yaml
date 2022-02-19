@@ -1,5 +1,5 @@
 {% set name = "scitokens" %}
-{% set version = "1.6.2" %}
+{% set version = "1.7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/scitokens-{{ version }}.tar.gz
-  sha256: 94ef645e5b3d1caa1d1a5a4771bc705084f4716f2090371cd7f65dcf63834e9d
+  sha256: c08dc3018c06506a38206ba78cc594df5812979ae38c19ad99614cc0e01eb19b
 
 build:
   number: 0
