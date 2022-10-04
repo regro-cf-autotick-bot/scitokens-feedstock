@@ -11,6 +11,8 @@ Summary: SciToken reference implementation library
 
 Development: https://github.com/scitokens/scitokens.git
 
+Documentation: https://scitokens.readthedocs.io
+
 This library aims to be a reference implementation of the
 SciTokens\' JSON Web Token (JWT) token format.
 
