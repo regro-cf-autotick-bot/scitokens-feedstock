@@ -20,12 +20,13 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.5
     - setuptools
   run:
     - cryptography
     - pyjwt >=1.6.1
-    - python >=3.6
+    - python >=3.5
+    - setuptools
     - six
 
 test:
@@ -35,8 +36,9 @@ test:
   source_files:
     - tests/
   commands:
-    # check requirements
-    - python -m pip check
+    # check metadata
+    - python -m pip check scitokens
+    - python -m pip show scitokens
     # run test suite
     - python -m pytest -ra -v tests/
     # sanity check entry points
