@@ -1,5 +1,5 @@
 {% set name = "scitokens" %}
-{% set version = "1.7.0" %}
+{% set version = "1.7.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/scitokens-{{ version }}.tar.gz
-  sha256: c08dc3018c06506a38206ba78cc594df5812979ae38c19ad99614cc0e01eb19b
+  sha256: 87c47a64129fa7635384aec09b1cee2299c72236286440c97395c6757bc69150
 
 build:
   number: 0
@@ -20,12 +20,13 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.5
     - setuptools
   run:
     - cryptography
     - pyjwt >=1.6.1
-    - python >=3.6
+    - python >=3.5
+    - setuptools
     - six
 
 test:
@@ -35,8 +36,9 @@ test:
   source_files:
     - tests/
   commands:
-    # check requirements
-    - python -m pip check
+    # check metadata
+    - python -m pip check scitokens
+    - python -m pip show scitokens
     # run test suite
     - python -m pytest -ra -v tests/
     # sanity check entry points
@@ -46,6 +48,7 @@ test:
 about:
   home: https://scitokens.org
   dev_url: https://github.com/scitokens/scitokens.git
+  doc_url: https://scitokens.readthedocs.io
   summary: SciToken reference implementation library
   license: Apache-2.0
   license_file: LICENSE
