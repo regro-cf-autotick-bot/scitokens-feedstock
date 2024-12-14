@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/scitokens-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/scitokens-{{ version }}.tar.gz
   sha256: f255383d9c7402b3fcd20d5ed26a6b407b4be8bec6f282d0af29b6275382b54d
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - scitokens-admin-create-key = scitokens.tools.admin_create_key:main
@@ -21,18 +21,19 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.5
+    - python {{ python_min }}
     - setuptools
   run:
     - cryptography
     - pyjwt >=1.6.1
-    - python >=3.5
+    - python >={{ python_min }}
     - requests
 
 test:
   requires:
     - pip
     - pytest
+    - python {{ python_min }}
   source_files:
     - tests/
   commands:
